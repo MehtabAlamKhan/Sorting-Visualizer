@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/MehtabAlamKhan/Sorting-Visualizer/static/css/main.80316796.chunk.css",
+    "main.js": "/MehtabAlamKhan/Sorting-Visualizer/static/js/main.65f114a7.chunk.js",
+    "main.js.map": "/MehtabAlamKhan/Sorting-Visualizer/static/js/main.65f114a7.chunk.js.map",
+    "runtime-main.js": "/MehtabAlamKhan/Sorting-Visualizer/static/js/runtime-main.bf343ae3.js",
+    "runtime-main.js.map": "/MehtabAlamKhan/Sorting-Visualizer/static/js/runtime-main.bf343ae3.js.map",
+    "static/js/2.7b0884d3.chunk.js": "/MehtabAlamKhan/Sorting-Visualizer/static/js/2.7b0884d3.chunk.js",
+    "static/js/2.7b0884d3.chunk.js.map": "/MehtabAlamKhan/Sorting-Visualizer/static/js/2.7b0884d3.chunk.js.map",
+    "static/js/3.e2210ffa.chunk.js": "/MehtabAlamKhan/Sorting-Visualizer/static/js/3.e2210ffa.chunk.js",
+    "static/js/3.e2210ffa.chunk.js.map": "/MehtabAlamKhan/Sorting-Visualizer/static/js/3.e2210ffa.chunk.js.map",
+    "index.html": "/MehtabAlamKhan/Sorting-Visualizer/index.html",
+    "static/css/main.80316796.chunk.css.map": "/MehtabAlamKhan/Sorting-Visualizer/static/css/main.80316796.chunk.css.map",
+    "static/js/2.7b0884d3.chunk.js.LICENSE.txt": "/MehtabAlamKhan/Sorting-Visualizer/static/js/2.7b0884d3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf343ae3.js",
+    "static/js/2.7b0884d3.chunk.js",
+    "static/css/main.80316796.chunk.css",
+    "static/js/main.65f114a7.chunk.js"
+  ]
+}
