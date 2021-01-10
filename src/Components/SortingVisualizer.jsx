@@ -2,7 +2,7 @@ import "./styles/SortingVisualizer.css";
 import React, { useState, useEffect } from "react";
 import * as SortingAlgorithms from "./SortingAlogorithms.js";
 
-const TIMER = 10;
+const TIMER = 1;
 var timer;
 
 function SortingVisualizer() {
