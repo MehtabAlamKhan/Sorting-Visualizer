@@ -1,0 +1,222 @@
+html {
+  cursor: url("/src/red.png"), default;
+}
+
+body {
+  background-color: azure;
+}
+
+.nav-bar {
+  position: relative;
+  background-color: rgb(51, 51, 51);
+  height: 50px;
+}
+.reset {
+  cursor: url("/src/red.png"), default;
+  text-align: center;
+  left: 0;
+
+  align-content: center;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  margin: 0px 0px 0px 150px;
+  font-size: 1.4em;
+  align-items: center;
+  border-radius: 0px;
+  border-width: 0px;
+  outline: none;
+  /* border-right: 1px rgb(179, 179, 179) solid; */
+  font-family: monospace;
+  /* padding-right: 20px; */
+  height: 50px;
+  background-color: transparent;
+  font-weight: 1000;
+}
+.reset:hover {
+  color: rgb(255, 30, 30);
+  transition: all 0.1s;
+}
+.reset:disabled {
+  cursor: not-allowed;
+  color: rgb(163, 163, 163);
+}
+
+.s-reset {
+  cursor: url("/src/red.png"), default;
+  text-align: center;
+  left: 150px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  margin: 0px 0px 0px 150px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-width: 0px;
+
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+.s-reset:hover {
+  color: rgb(255, 30, 30);
+  transition: all 0.1s;
+}
+
+.merge {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  right: 0;
+  position: absolute;
+  margin: 0px 700px 0px 0px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+.merge:hover {
+  color: aqua;
+}
+.merge:disabled {
+  cursor: not-allowed;
+  color: rgb(163, 163, 163);
+}
+.quick {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  right: 0;
+  position: absolute;
+  margin: 0px 570px 0px 0px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+.quick:hover {
+  color: aqua;
+}
+.quick:disabled {
+  cursor: not-allowed;
+  color: rgb(163, 163, 163);
+}
+.bubble {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  right: 0;
+  position: absolute;
+  margin: 0px 420px 0px 0px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+.bubble:hover {
+  color: aqua;
+}
+.bubble:disabled {
+  cursor: not-allowed;
+  color: rgb(163, 163, 163);
+}
+.heap {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  right: 0;
+  position: absolute;
+  margin: 0px 290px 0px 0px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+.heap:hover {
+  color: aqua;
+}
+.heap:disabled {
+  cursor: not-allowed;
+  color: rgb(163, 163, 163);
+}
+.insertion {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  right: 0;
+  position: absolute;
+  margin: 0px 120px 0px 0px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+
+.insertion:hover {
+  color: aqua;
+}
+.insertion:disabled {
+  cursor: not-allowed;
+  color: rgb(163, 163, 163);
+}
+
+.array-container {
+  display: flex;
+  justify-content: center;
+  align-items: inherit;
+  
+}
+
+.array-bars {
+  width: 4px;
+  margin: 0px 1px;
+  background-color: turquoise;
+}
+
+.down-bar {
+  position: fixed;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  bottom: 0;
+  background-color: rgb(42, 42, 42);
+  width: 100%;
+}
+.text {
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 1.3em;
+
+  color: rgb(255, 255, 255);
+}
+.text:hover {
+  cursor: url("/src/red.png"), default;
+  transition: all 0.1s;
+  transform: scale(1.005);
+  color: rgb(255, 196, 196);
+
+  /* color: #ff00ea; */
+}

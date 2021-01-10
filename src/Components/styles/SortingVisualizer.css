@@ -1,0 +1,260 @@
+html {
+  cursor: url("/src/red.png"), default;
+}
+
+body {
+  background-color: azure;
+}
+
+.nav-bar {
+  position: relative;
+  background-color: #333333;
+  height: 50px;
+}
+
+.reset {
+  cursor: url("/src/red.png"), default;
+  text-align: center;
+  left: 0;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  color: white;
+  position: absolute;
+  margin: 0px 0px 0px 150px;
+  font-size: 1.4em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0px;
+  border-width: 0px;
+  outline: none;
+  /* border-right: 1px rgb(179, 179, 179) solid; */
+  font-family: monospace;
+  /* padding-right: 20px; */
+  height: 50px;
+  background-color: transparent;
+  font-weight: 1000;
+}
+
+.reset:hover {
+  color: #ff1e1e;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.reset:disabled {
+  cursor: not-allowed;
+  color: #a3a3a3;
+}
+
+.s-reset {
+  cursor: url("/src/red.png"), default;
+  text-align: center;
+  left: 150px;
+  color: white;
+  position: absolute;
+  margin: 0px 0px 0px 150px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+
+.s-reset:hover {
+  color: #ff1e1e;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.merge {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  right: 0;
+  position: absolute;
+  margin: 0px 700px 0px 0px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+
+.merge:hover {
+  color: aqua;
+}
+
+.merge:disabled {
+  cursor: not-allowed;
+  color: #a3a3a3;
+}
+
+.quick {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  right: 0;
+  position: absolute;
+  margin: 0px 570px 0px 0px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+
+.quick:hover {
+  color: aqua;
+}
+
+.quick:disabled {
+  cursor: not-allowed;
+  color: #a3a3a3;
+}
+
+.bubble {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  right: 0;
+  position: absolute;
+  margin: 0px 420px 0px 0px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+
+.bubble:hover {
+  color: aqua;
+}
+
+.bubble:disabled {
+  cursor: not-allowed;
+  color: #a3a3a3;
+}
+
+.heap {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  right: 0;
+  position: absolute;
+  margin: 0px 290px 0px 0px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+
+.heap:hover {
+  color: aqua;
+}
+
+.heap:disabled {
+  cursor: not-allowed;
+  color: #a3a3a3;
+}
+
+.insertion {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  right: 0;
+  position: absolute;
+  margin: 0px 120px 0px 0px;
+  font-size: 1.4em;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  height: 100%;
+  background-color: transparent;
+  font-weight: 1000;
+}
+
+.insertion:hover {
+  color: aqua;
+}
+
+.insertion:disabled {
+  cursor: not-allowed;
+  color: #a3a3a3;
+}
+
+.array-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+}
+
+.array-bars {
+  width: 4px;
+  margin: 0px 1px;
+  background-color: turquoise;
+}
+
+.down-bar {
+  position: fixed;
+  padding: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 0;
+  background-color: #2a2a2a;
+  width: 100%;
+}
+
+.text {
+  background-color: transparent;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: monospace;
+  font-size: 1.3em;
+  color: white;
+}
+
+.text:hover {
+  cursor: url("/src/red.png"), default;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transform: scale(1.005);
+          transform: scale(1.005);
+  color: #ffc4c4;
+  /* color: #ff00ea; */
+}
+/*# sourceMappingURL=SortingVisualizer.css.map */
