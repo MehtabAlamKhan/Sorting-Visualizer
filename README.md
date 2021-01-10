@@ -13,3 +13,5 @@ Algorithms included are -
 
 Feel free to download and use it for your
 educational purpose.# Sorting-Visualizer
+
+Check it out - https://mehtabalamkhan.github.io/Sorting-Visualizer/
