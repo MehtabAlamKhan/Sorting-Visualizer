@@ -2,8 +2,7 @@
           Sorting Visualzer 
 ------------------------------------
 Just a basic Sorting Visualzer app where
-you can visualize how the sorting algori-
-thms work.
+you can visualize how the sorting algorithms work.
 
 Algorithms included are -
 
