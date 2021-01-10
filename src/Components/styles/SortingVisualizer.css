@@ -6,10 +6,67 @@ body {
   background-color: azure;
 }
 
+@media only screen and (max-width: 1000px) {
+  .nav-bar {
+    padding-bottom: 7px;
+    padding-top: 7px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .nav-bar {
+    height: 50px;
+  }
+  .reset {
+    position: absolute;
+    margin: 0px 0px 0px 100px;
+    font-size: 1.4em;
+    height: 50px;
+    font-weight: 1000;
+  }
+  .merge {
+    height: 100%;
+    font-weight: 1000;
+    margin: 0px 700px 0px 0px;
+    font-size: 1.4em;
+    position: absolute;
+  }
+  .quick {
+    position: absolute;
+    font-size: 1.4em;
+    height: 100%;
+    font-weight: 1000;
+    margin: 0px 570px 0px 0px;
+  }
+  .bubble {
+    right: 0;
+    position: absolute;
+    margin: 0px 420px 0px 0px;
+    font-size: 1.4em;
+    height: 100%;
+    font-weight: 1000;
+  }
+  .heap {
+    right: 0;
+    position: absolute;
+    margin: 0px 290px 0px 0px;
+    font-size: 1.4em;
+    height: 100%;
+    font-weight: 1000;
+  }
+  .insertion {
+    right: 0;
+    position: absolute;
+    margin: 0px 120px 0px 0px;
+    height: 100%;
+    font-size: 1.4em;
+    font-weight: 1000;
+  }
+}
+
 .nav-bar {
   position: relative;
   background-color: #333333;
-  height: 50px;
 }
 
 .reset {
@@ -19,9 +76,6 @@ body {
   -ms-flex-line-pack: center;
       align-content: center;
   color: white;
-  position: absolute;
-  margin: 0px 0px 0px 150px;
-  font-size: 1.4em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -31,9 +85,7 @@ body {
   /* border-right: 1px rgb(179, 179, 179) solid; */
   font-family: monospace;
   /* padding-right: 20px; */
-  height: 50px;
   background-color: transparent;
-  font-weight: 1000;
 }
 
 .reset:hover {
@@ -74,17 +126,12 @@ body {
   color: white;
   cursor: url("/src/red.png"), default;
   right: 0;
-  position: absolute;
-  margin: 0px 700px 0px 0px;
-  font-size: 1.4em;
   border-radius: 0px;
   border-color: black;
   border-width: 0px;
   outline: none;
   font-family: monospace;
-  height: 100%;
   background-color: transparent;
-  font-weight: 1000;
 }
 
 .merge:hover {
@@ -100,17 +147,12 @@ body {
   color: white;
   cursor: url("/src/red.png"), default;
   right: 0;
-  position: absolute;
-  margin: 0px 570px 0px 0px;
-  font-size: 1.4em;
   border-radius: 0px;
   border-color: black;
   border-width: 0px;
   outline: none;
   font-family: monospace;
-  height: 100%;
   background-color: transparent;
-  font-weight: 1000;
 }
 
 .quick:hover {
@@ -125,18 +167,11 @@ body {
 .bubble {
   color: white;
   cursor: url("/src/red.png"), default;
-  right: 0;
-  position: absolute;
-  margin: 0px 420px 0px 0px;
-  font-size: 1.4em;
   border-radius: 0px;
-  border-color: black;
   border-width: 0px;
   outline: none;
   font-family: monospace;
-  height: 100%;
   background-color: transparent;
-  font-weight: 1000;
 }
 
 .bubble:hover {
@@ -151,18 +186,12 @@ body {
 .heap {
   color: white;
   cursor: url("/src/red.png"), default;
-  right: 0;
-  position: absolute;
-  margin: 0px 290px 0px 0px;
-  font-size: 1.4em;
   border-radius: 0px;
   border-color: black;
   border-width: 0px;
   outline: none;
   font-family: monospace;
-  height: 100%;
   background-color: transparent;
-  font-weight: 1000;
 }
 
 .heap:hover {
@@ -177,18 +206,11 @@ body {
 .insertion {
   color: white;
   cursor: url("/src/red.png"), default;
-  right: 0;
-  position: absolute;
-  margin: 0px 120px 0px 0px;
-  font-size: 1.4em;
   border-radius: 0px;
-  border-color: black;
   border-width: 0px;
   outline: none;
   font-family: monospace;
-  height: 100%;
   background-color: transparent;
-  font-weight: 1000;
 }
 
 .insertion:hover {
@@ -198,6 +220,14 @@ body {
 .insertion:disabled {
   cursor: not-allowed;
   color: #a3a3a3;
+}
+
+.insertion::-moz-selection {
+  color: aqua;
+}
+
+.insertion::selection {
+  color: aqua;
 }
 
 .array-container {
