@@ -6,7 +6,7 @@ body {
   background-color: azure;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1400px) {
   .nav-bar {
     padding-bottom: 10px;
     padding-top: 10px;
@@ -16,6 +16,15 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .ord {
+    cursor: url("/src/red.png"), default;
+  }
+  .asc {
+    cursor: url("/src/red.png"), default;
+  }
+  .dsc {
+    cursor: url("/src/red.png"), default;
   }
   .slider {
     height: 10px;
@@ -44,7 +53,7 @@ body {
   }
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1400px) {
   .nav-bar {
     height: 50px;
   }
@@ -57,7 +66,7 @@ body {
   }
   .slider {
     position: absolute;
-    margin-left: 300px;
+    margin-left: 250px;
     left: 0;
     height: 100%;
     -webkit-appearance: none;
@@ -84,6 +93,27 @@ body {
     border-radius: 15px;
     -webkit-box-align: center;
             align-items: center;
+    cursor: url("/src/red.png"), default;
+  }
+  .ord {
+    cursor: url("/src/red.png"), default;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 420px;
+    height: 50px;
+    top: 17px;
+  }
+  .asc {
+    font-size: 1.2em;
+    cursor: url("/src/red.png"), default;
+  }
+  #dscc {
+    margin-left: 30px;
+  }
+  .dsc {
+    font-size: 1.2em;
     cursor: url("/src/red.png"), default;
   }
   .merge {
@@ -187,6 +217,34 @@ body {
   color: #ff1e1e;
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
+}
+
+.ord {
+  color: white;
+  cursor: url("/src/red.png"), default;
+  border-radius: 0px;
+  border-color: black;
+  border-width: 0px;
+  outline: none;
+  font-family: monospace;
+  background-color: transparent;
+}
+
+.ord:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.asc:disabled {
+  cursor: not-allowed;
+}
+
+.dsc:disabled {
+  cursor: not-allowed;
+}
+
+.dscc:disabled {
+  cursor: not-allowed;
 }
 
 .merge {

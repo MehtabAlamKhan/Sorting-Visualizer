@@ -2,7 +2,7 @@ import "./styles/SortingVisualizer.css";
 import React, { useState, useEffect } from "react";
 import * as SortingAlgorithms from "./SortingAlogorithms.js";
 
-const TIMER = 10;
+const TIMER = 1;
 var timer;
 
 function SortingVisualizer() {
@@ -11,6 +11,7 @@ function SortingVisualizer() {
   const [auxArray, setAuxArray] = useState([]);
   const [slider, setSlider] = useState(50);
   const [width, setWidth] = useState(4);
+  const [order, setOrder] = useState("asc");
 
   useEffect(() => {
     console.log("disabling effect called");
@@ -32,7 +33,7 @@ function SortingVisualizer() {
     if (slider <= 30) {
       for (let i = 0; i < 25; i++) {
         array.push(randomNumbers(5, window.screen.height - 300));
-      }      
+      }
       setWidth(35);
     } else if (slider > 25 && slider <= 50) {
       for (let i = 0; i < 70; i++) {
@@ -45,10 +46,14 @@ function SortingVisualizer() {
       }
       setWidth(8);
     } else {
-      for (let i = 0; i < 250; i++) {
+      for (let i = 0; i < 200; i++) {
         array.push(randomNumbers(5, window.screen.height - 300));
       }
-      setWidth(3);
+      if (window.screen.width < 500) {
+        setWidth(8);
+      } else {
+        setWidth(3);
+      }
     }
     changeColor();
     var auxArray = array.map((v) => v);
@@ -73,7 +78,7 @@ function SortingVisualizer() {
 
   const mergeSort = () => {
     setdisableButton(true);
-    const animations = SortingAlgorithms.mergeSort(auxArray);
+    const animations = SortingAlgorithms.mergeSort(auxArray,order);
     // console.log(animations);
 
     const arrayBars = document.getElementsByClassName("array-bars");
@@ -106,7 +111,7 @@ function SortingVisualizer() {
 
   const quickSort = () => {
     setdisableButton(true);
-    const ani = SortingAlgorithms.QuickSortCall(auxArray);
+    const ani = SortingAlgorithms.QuickSortCall(auxArray,order);
     const animations = ani.animation;
     const animations2 = ani.animation2;
 
@@ -155,7 +160,7 @@ function SortingVisualizer() {
 
   const bubbleSort = () => {
     setdisableButton(true);
-    const animations = SortingAlgorithms.bubbleSortCall(auxArray);
+    const animations = SortingAlgorithms.bubbleSortCall(auxArray,order);
     var isChange = true;
     const arrayBars = document.getElementsByClassName("array-bars");
     for (let i = 0; i < animations.length; i++) {
@@ -199,7 +204,7 @@ function SortingVisualizer() {
 
   const heapSort = () => {
     setdisableButton(true);
-    const animations = SortingAlgorithms.heapSortCall(auxArray);
+    const animations = SortingAlgorithms.heapSortCall(auxArray,order);
     var isChange = true;
     const arrayBars = document.getElementsByClassName("array-bars");
     for (let i = 0; i < animations.length; i++) {
@@ -258,7 +263,7 @@ function SortingVisualizer() {
 
   const insertionSort = () => {
     setdisableButton(true);
-    const animations = SortingAlgorithms.insertionSortCall(auxArray);
+    const animations = SortingAlgorithms.insertionSortCall(auxArray,order);
     var isChange = true;
     const arrayBars = document.getElementsByClassName("array-bars");
     for (let i = 0; i < animations.length; i++) {
@@ -333,6 +338,34 @@ function SortingVisualizer() {
             setArray(array);
           }}
         />
+        <div className="ord">
+          <input
+            disabled={disableButton}
+            type="checkbox"
+            className="asc"
+            name="asc"
+            value="asc"
+            checked={order === "asc" ? true : false}
+            onChange={(e) => setOrder(e.target.value)}
+          />
+          <label className="asc" htmlFor="asc">
+            ASC
+          </label>
+          <input
+            disabled={disableButton}
+            type="checkbox"
+            className="dsc"
+            id="dscc"
+            name="dsc"
+            value="dsc"
+            checked={order === "dsc" ? true : false}
+            onChange={(e) => setOrder(e.target.value)}
+          />
+          <label className="dsc" htmlFor="dsc">
+            DSC
+          </label>
+        </div>
+
         <button
           className="merge"
           onClick={() => mergeSort()}
