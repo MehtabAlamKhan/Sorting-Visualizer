@@ -91,7 +91,7 @@ function heapSort(array, animations, order) {
   for (i = array.length - 1; i > 0; i--) {
     swap(array, 0, i);
     length--;
-    animations.push([0, i, array[0], array[i]]);
+    animations.push([0,i, array[0], array[i]]);
 
     heap_root(array, animations, 0, order);
   }
@@ -107,10 +107,12 @@ function heap_root(array, animations, i, order) {
       largest = l;
       animations.push([i, l]);
       animations.push([i, l]);
+      animations.push([i, l]);
     }
 
     if (r < length && array[r] > array[largest]) {
       largest = r;
+      animations.push([i, r]);
       animations.push([i, r]);
       animations.push([i, r]);
     }
@@ -120,10 +122,12 @@ function heap_root(array, animations, i, order) {
       largest = l;
       animations.push([i, l]);
       animations.push([i, l]);
+      animations.push([i, l]);
     }
   
     if (r < length && array[r] < array[largest]) {
       largest = r;
+      animations.push([i, r]);
       animations.push([i, r]);
       animations.push([i, r]);
     }

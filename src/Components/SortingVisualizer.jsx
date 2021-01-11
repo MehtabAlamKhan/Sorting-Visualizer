@@ -241,10 +241,10 @@ function SortingVisualizer() {
   const heapSort = () => {
     setdisableButton(true);
     const animations = SortingAlgorithms.heapSortCall(auxArray, order);
-    var isChange = true;
+    var myNum = 1;
     const arrayBars = document.getElementsByClassName("array-bars");
     for (let i = 0; i < animations.length; i++) {
-      console.log(animations[i].length);
+      // console.log(animations[i].length);
       if (animations[i].length === 4) {
         const [barOneIdx, barTwoIdx, small, large] = animations[i];
         const barOneStyle = arrayBars[barOneIdx].style;
@@ -265,14 +265,20 @@ function SortingVisualizer() {
         const [barOneIdx, barTwoIdx] = animations[i];
         const barOneStyle = arrayBars[barOneIdx].style;
         const barTwoStyle = arrayBars[barTwoIdx].style;
-        if (isChange) {
-          isChange = false;
+        if (myNum === 1) {
+          myNum = 2;
           setTimeout(() => {
             barOneStyle.backgroundColor = "red";
             barTwoStyle.backgroundColor = "red";
           }, i * TIMER);
-        } else {
-          isChange = true;
+        } else if (myNum === 2) {
+          myNum = 3;
+          setTimeout(() => {
+            barOneStyle.backgroundColor = "yellow";
+            barTwoStyle.backgroundColor = "yellow";
+          }, i * TIMER);
+        } else if (myNum === 3) {
+          myNum = 1;
           setTimeout(() => {
             barOneStyle.backgroundColor = "turquoise";
             barTwoStyle.backgroundColor = "turquoise";
