@@ -78,27 +78,43 @@ function SortingVisualizer() {
 
   const mergeSort = () => {
     setdisableButton(true);
-    const animations = SortingAlgorithms.mergeSort(auxArray,order);
+    const animations = SortingAlgorithms.mergeSort(auxArray, order);
     // console.log(animations);
 
     const arrayBars = document.getElementsByClassName("array-bars");
+    var myNum = 1;
     for (let i = 0; i < animations.length; i++) {
-      const isColorChange = i % 3 !== 2;
-      if (isColorChange) {
+      if (animations[i].length === 3) {
         const [barOneIdx, barTwoIdx] = animations[i];
-
         const barOneStyle = arrayBars[barOneIdx].style;
         const barTwoStyle = arrayBars[barTwoIdx].style;
-        const color = i % 3 === 0 ? "red" : "#ff9ee6";
+        if (myNum === 1) {
+          myNum = 2;
+          setTimeout(() => {
+            barOneStyle.backgroundColor = "red";
+            barTwoStyle.backgroundColor = "red";
+          }, i * TIMER);
+        } else if (myNum === 2) {
+          myNum = 3;
+          setTimeout(() => {
+            barOneStyle.backgroundColor = "yellow";
+            barTwoStyle.backgroundColor = "yellow";
+          }, i * TIMER);
+        } else if (myNum === 3) {
+          myNum = 1;
+          setTimeout(() => {
+            barOneStyle.backgroundColor = "turquoise";
+            barTwoStyle.backgroundColor = "turquoise";
+          }, i * TIMER);
+        }
+      } else if (animations[i].length === 4) {
         timer = setTimeout(() => {
-          barOneStyle.backgroundColor = color;
-          barTwoStyle.backgroundColor = color;
-        }, i * TIMER);
-      } else {
-        timer = setTimeout(() => {
-          const [barOneIdx, newHeight] = animations[i];
+          const [barOneIdx, barTwoIdx, newHeight, ,] = animations[i];
           const barOneStyle = arrayBars[barOneIdx].style;
+          const barTwoStyle = arrayBars[barTwoIdx].style;
           barOneStyle.height = `${newHeight}px`;
+          barOneStyle.backgroundColor = "#ff9ee6";
+          barTwoStyle.backgroundColor = "#ff9ee6";
         }, i * TIMER);
       }
       if (i === animations.length - 1) {
@@ -111,12 +127,14 @@ function SortingVisualizer() {
 
   const quickSort = () => {
     setdisableButton(true);
-    const ani = SortingAlgorithms.QuickSortCall(auxArray,order);
+    const ani = SortingAlgorithms.QuickSortCall(auxArray, order);
     const animations = ani.animation;
     const animations2 = ani.animation2;
+    console.log(animations);
 
     const arrayBars = document.getElementsByClassName("array-bars");
     var isChange = true;
+    var myNum = 1;
     for (let i = 0; i < animations.length; i++) {
       if (animations[i].length === 4) {
         const [barOneIdx, barTwoIdx, small, large] = animations[i];
@@ -124,26 +142,38 @@ function SortingVisualizer() {
         const barTwoStyle = arrayBars[barTwoIdx].style;
         setTimeout(() => {
           barOneStyle.height = `${small}px`;
-
           barTwoStyle.height = `${large}px`;
-
+        }, i * TIMER);
+      } else if (animations[i].length === 5) {
+        const [barOneIdx, barTwoIdx, small, large, ,] = animations[i];
+        const barOneStyle = arrayBars[barOneIdx].style;
+        const barTwoStyle = arrayBars[barTwoIdx].style;
+        setTimeout(() => {
+          barOneStyle.height = `${small}px`;
+          barTwoStyle.height = `${large}px`;
           barTwoStyle.backgroundColor = "#ff9ee6";
           if (i === animations.length - 1) {
-            barOneStyle.backgroundColor = "#ff9ee6";
+            barTwoStyle.backgroundColor = "#ff9ee6";
           }
         }, i * TIMER);
       } else if (animations[i].length === 2) {
         const [barOneIdx, barTwoIdx] = animations[i];
         const barOneStyle = arrayBars[barOneIdx].style;
         const barTwoStyle = arrayBars[barTwoIdx].style;
-        if (isChange) {
-          isChange = false;
+        if (myNum === 1) {
+          myNum = 2;
           setTimeout(() => {
             barOneStyle.backgroundColor = "#ff0000";
             barTwoStyle.backgroundColor = "#ff0000";
           }, i * TIMER);
+        } else if (myNum === 2) {
+          myNum = 3;
+          setTimeout(() => {
+            barOneStyle.backgroundColor = "yellow";
+            barTwoStyle.backgroundColor = "yellow";
+          }, i * TIMER);
         } else {
-          isChange = true;
+          myNum = 1;
           setTimeout(() => {
             barOneStyle.backgroundColor = "turquoise";
             barTwoStyle.backgroundColor = "turquoise";
@@ -160,8 +190,8 @@ function SortingVisualizer() {
 
   const bubbleSort = () => {
     setdisableButton(true);
-    const animations = SortingAlgorithms.bubbleSortCall(auxArray,order);
-    var isChange = true;
+    const animations = SortingAlgorithms.bubbleSortCall(auxArray, order);
+    var myNum = 1;
     const arrayBars = document.getElementsByClassName("array-bars");
     for (let i = 0; i < animations.length; i++) {
       if (animations[i].length === 4) {
@@ -180,14 +210,20 @@ function SortingVisualizer() {
         const [barOneIdx, barTwoIdx] = animations[i];
         const barOneStyle = arrayBars[barOneIdx].style;
         const barTwoStyle = arrayBars[barTwoIdx].style;
-        if (isChange) {
-          isChange = false;
+        if (myNum === 1) {
+          myNum = 2;
           setTimeout(() => {
             barOneStyle.backgroundColor = "red";
             barTwoStyle.backgroundColor = "red";
           }, i * TIMER);
+        } else if (myNum === 2) {
+          myNum = 3;
+          setTimeout(() => {
+            barOneStyle.backgroundColor = "yellow";
+            barTwoStyle.backgroundColor = "ywllow";
+          }, i * TIMER);
         } else {
-          isChange = true;
+          myNum = 1;
           setTimeout(() => {
             barOneStyle.backgroundColor = "turquoise";
             barTwoStyle.backgroundColor = "turquoise";
@@ -204,7 +240,7 @@ function SortingVisualizer() {
 
   const heapSort = () => {
     setdisableButton(true);
-    const animations = SortingAlgorithms.heapSortCall(auxArray,order);
+    const animations = SortingAlgorithms.heapSortCall(auxArray, order);
     var isChange = true;
     const arrayBars = document.getElementsByClassName("array-bars");
     for (let i = 0; i < animations.length; i++) {
@@ -262,7 +298,7 @@ function SortingVisualizer() {
 
   const insertionSort = () => {
     setdisableButton(true);
-    const animations = SortingAlgorithms.insertionSortCall(auxArray,order);
+    const animations = SortingAlgorithms.insertionSortCall(auxArray, order);
     var isChange = true;
     const arrayBars = document.getElementsByClassName("array-bars");
     for (let i = 0; i < animations.length; i++) {

@@ -48,6 +48,7 @@ function bubbleSort(array, animation, order) {
     for (var j = 1; j < array.length - i; j++) {
       animation.push([j - 1, j]);
       animation.push([j - 1, j]);
+      animation.push([j - 1, j]);
       if (order === "asc") {
         if (array[j - 1] > array[j]) {
           let temp = array[j - 1];
@@ -197,10 +198,13 @@ function partition(array, l, h, animation, animation2,order) {
     if (i < j) {
       animation.push([i, j]);
       animation.push([i, j]);
-      // animation.push([i, j, array[i], array[j]]);
+      animation.push([i, j]);
+      
       let temp = array[i];
       array[i] = array[j];
       array[j] = temp;
+      // animation.push([i, j, array[i], array[j]]);
+      animation.push([i, j, array[i], array[j]]);
     }
   }
 
@@ -210,7 +214,9 @@ function partition(array, l, h, animation, animation2,order) {
 
   animation.push([l, j]);
   animation.push([l, j]);
-  animation.push([l, j, array[l], array[j]]);
+  animation.push([l, j]);
+  // animation.push([l, j, array[l], array[j]],0);
+  animation.push([l, j, array[l], array[j],0]);
 
   return j;
 }
@@ -253,32 +259,33 @@ function doMerge(
   while (i <= middleIdx && j <= endIdx) {
     // These are the values that we're comparing; we push them once
     // to change their color.
-    animations.push([i, j]);
+    animations.push([i, j,0]);
     // These are the values that we're comparing; we push them a second
     // time to revert their color.
-    animations.push([i, j]);
+    animations.push([i, j,0]);
+    animations.push([i, j,0]);
     if(order==='asc'){
       if (auxiliaryArray[i] <= auxiliaryArray[j]) {
         // We overwrite the value at index k in the original array with the
         // value at index i in the auxiliary array.
-        animations.push([k, auxiliaryArray[i]]);
+        animations.push([k,i, auxiliaryArray[i],0]);
         mainArray[k++] = auxiliaryArray[i++];
       } else {
         // We overwrite the value at index k in the original array with the
         // value at index j in the auxiliary array.
-        animations.push([k, auxiliaryArray[j]]);
+        animations.push([k,j, auxiliaryArray[j],0]);
         mainArray[k++] = auxiliaryArray[j++];
       }
     }else{
       if (auxiliaryArray[i] >= auxiliaryArray[j]) {
         // We overwrite the value at index k in the original array with the
         // value at index i in the auxiliary array.
-        animations.push([k, auxiliaryArray[i]]);
+        animations.push([k,i, auxiliaryArray[i],0]);
         mainArray[k++] = auxiliaryArray[i++];
       } else {
         // We overwrite the value at index k in the original array with the
         // value at index j in the auxiliary array.
-        animations.push([k, auxiliaryArray[j]]);
+        animations.push([k,j, auxiliaryArray[j],0]);
         mainArray[k++] = auxiliaryArray[j++];
       }
     }
@@ -290,9 +297,10 @@ function doMerge(
     // These are the values that we're comparing; we push them a second
     // time to revert their color.
     animations.push([i, i]);
+    animations.push([i, i]);
     // We overwrite the value at index k in the original array with the
     // value at index i in the auxiliary array.
-    animations.push([k, auxiliaryArray[i]]);
+    animations.push([k,i, auxiliaryArray[i],0]);
     mainArray[k++] = auxiliaryArray[i++];
   }
   while (j <= endIdx) {
@@ -302,9 +310,10 @@ function doMerge(
     // These are the values that we're comparing; we push them a second
     // time to revert their color.
     animations.push([j, j]);
+    animations.push([j, j]);
     // We overwrite the value at index k in the original array with the
     // value at index j in the auxiliary array.
-    animations.push([k, auxiliaryArray[j]]);
+    animations.push([k,j, auxiliaryArray[j],0]);
     mainArray[k++] = auxiliaryArray[j++];
   }
 }
