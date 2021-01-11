@@ -44,9 +44,9 @@ function SortingVisualizer() {
       for (let i = 0; i < 110; i++) {
         array.push(randomNumbers(5, window.screen.height - 300));
       }
-      setWidth(8);
+      setWidth(6);
     } else {
-      for (let i = 0; i < 200; i++) {
+      for (let i = 0; i < 150; i++) {
         array.push(randomNumbers(5, window.screen.height - 300));
       }
       if (window.screen.width < 1090) {
