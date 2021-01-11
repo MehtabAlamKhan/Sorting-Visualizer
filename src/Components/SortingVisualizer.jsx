@@ -49,7 +49,7 @@ function SortingVisualizer() {
       for (let i = 0; i < 200; i++) {
         array.push(randomNumbers(5, window.screen.height - 300));
       }
-      if (window.screen.width < 600) {
+      if (window.screen.width < 1090) {
         setWidth(8);
       } else {
         setWidth(3);
