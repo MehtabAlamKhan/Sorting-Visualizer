@@ -9,7 +9,7 @@ function SortingVisualizer() {
   const [array, setArray] = useState([]);
   const [disableButton, setdisableButton] = useState(false);
   const [auxArray, setAuxArray] = useState([]);
-  const [slider, setSlider] = useState(50);
+  const [slider, setSlider] = useState(51);
   const [width, setWidth] = useState(4);
   const [order, setOrder] = useState("asc");
 
@@ -49,7 +49,7 @@ function SortingVisualizer() {
       for (let i = 0; i < 200; i++) {
         array.push(randomNumbers(5, window.screen.height - 300));
       }
-      if (window.screen.width < 500) {
+      if (window.screen.width < 600) {
         setWidth(8);
       } else {
         setWidth(3);
@@ -220,7 +220,6 @@ function SortingVisualizer() {
           setTimeout(() => {
             barTwoStyle.backgroundColor = "#ff9ee6";
           }, i * 0.1);
-
           if (i === animations.length - 1) {
             barOneStyle.backgroundColor = "#ff9ee6";
           }
