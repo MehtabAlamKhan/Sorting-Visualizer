@@ -9,6 +9,8 @@ function SortingVisualizer() {
   const [array, setArray] = useState([]);
   const [disableButton, setdisableButton] = useState(false);
   const [auxArray, setAuxArray] = useState([]);
+  const [slider, setSlider] = useState(50);
+  const [width, setWidth] = useState(4);
 
   useEffect(() => {
     console.log("disabling effect called");
@@ -21,19 +23,37 @@ function SortingVisualizer() {
     setArray(array);
     var auxArray = array.map((v) => v);
     setAuxArray(auxArray);
-    console.log(auxArray);
-  }, []);
+  }, [slider]);
 
   const resetArray = () => {
     console.log("reset func called");
     var array = [];
-    for (let i = 0; i < 120; i++) {
-      array.push(randomNumbers(5, 650));
+
+    if (slider <= 30) {
+      for (let i = 0; i < 25; i++) {
+        array.push(randomNumbers(5, window.screen.height - 300));
+      }      
+      setWidth(35);
+    } else if (slider > 25 && slider <= 50) {
+      for (let i = 0; i < 70; i++) {
+        array.push(randomNumbers(5, window.screen.height - 300));
+      }
+      setWidth(15);
+    } else if (slider > 50 && slider <= 75) {
+      for (let i = 0; i < 110; i++) {
+        array.push(randomNumbers(5, window.screen.height - 300));
+      }
+      setWidth(8);
+    } else {
+      for (let i = 0; i < 250; i++) {
+        array.push(randomNumbers(5, window.screen.height - 300));
+      }
+      setWidth(3);
     }
     changeColor();
     var auxArray = array.map((v) => v);
     setAuxArray(auxArray);
-    console.log(auxArray);
+
     return array;
   };
 
@@ -55,7 +75,7 @@ function SortingVisualizer() {
     setdisableButton(true);
     const animations = SortingAlgorithms.mergeSort(auxArray);
     // console.log(animations);
-    console.log(auxArray);
+
     const arrayBars = document.getElementsByClassName("array-bars");
     for (let i = 0; i < animations.length; i++) {
       const isColorChange = i % 3 !== 2;
@@ -138,7 +158,6 @@ function SortingVisualizer() {
     const animations = SortingAlgorithms.bubbleSortCall(auxArray);
     var isChange = true;
     const arrayBars = document.getElementsByClassName("array-bars");
-
     for (let i = 0; i < animations.length; i++) {
       if (animations[i].length === 4) {
         const [barOneIdx, barTwoIdx, small, large] = animations[i];
@@ -269,6 +288,7 @@ function SortingVisualizer() {
           barTwoStyle.height = `${large}px`;
           barOneStyle.backgroundColor = "#ff9ee6";
           barTwoStyle.backgroundColor = "#ff9ee6";
+          arrayBars[0].style.backgroundColor = "#ff9ee6";
         }, i * TIMER);
         // } else {
         //   const [barOneIdx, h, ,] = animations[i];
@@ -301,6 +321,18 @@ function SortingVisualizer() {
         {/* <button className="s-reset" onClick={() => stopAndReset()}>
           Stop And Reset
         </button> */}
+        <input
+          disabled={disableButton}
+          type="range"
+          className="slider"
+          value={slider}
+          min="0"
+          max="100"
+          onChange={(e) => {
+            setSlider(e.target.value);
+            setArray(array);
+          }}
+        />
         <button
           className="merge"
           onClick={() => mergeSort()}
@@ -342,7 +374,10 @@ function SortingVisualizer() {
           <div
             className="array-bars"
             key={idx}
-            style={{ height: `${bar}px` }}
+            style={{
+              height: `${bar}px`,
+              width: `${width}px`,
+            }}
           ></div>
         ))}
       </div>
