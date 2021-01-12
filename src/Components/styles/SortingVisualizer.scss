@@ -43,6 +43,28 @@ body {
     width: 10px;
     border-radius: 10px;
   }
+  .time-taken {
+    position: absolute;
+    border: 1px solid rgb(202, 202, 202);
+    color: rgb(61, 61, 61);
+    border-radius: 5px;
+    padding: 8px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    font-family: monospace, "Courier New", Courier;
+    font-weight: 550;
+    bottom: 90px;
+  }
+  .time {
+    position: relative;
+    margin: 0px 0px 0px 0px;
+    padding-top: 5px;
+  }
+  .delay {
+    position: relative;
+    margin: 0px 0px 0px 0px;
+  }
 }
 
 @media only screen and(min-width: 1400px) {
@@ -97,7 +119,7 @@ body {
     font-size: 1.2em;
     cursor: url("/src/red.png"), default;
   }
-  #dscc{
+  #dscc {
     margin-left: 30px;
   }
   .dsc {
@@ -141,6 +163,29 @@ body {
     height: 100%;
     font-size: 1.4em;
     font-weight: 1000;
+  }
+  .delay {
+    margin: 0;
+  }
+  .time-taken {
+    border: 1px solid rgb(168, 168, 168);
+    color: rgb(61, 61, 61);
+    border-radius: 5px;
+    height: 40px;
+    padding: 8px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    font-family: monospace, "Courier New", Courier, monospace;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+  .time {
+    position: absolute;
+    margin: 0;
+    margin-top: 20px;
   }
 }
 .slider:disabled {
@@ -208,17 +253,17 @@ body {
   font-family: monospace;
   background-color: transparent;
 }
-.ord:disabled{
+.ord:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.asc:disabled{
+.asc:disabled {
   cursor: not-allowed;
 }
-.dsc:disabled{
+.dsc:disabled {
   cursor: not-allowed;
 }
-.dscc:disabled{
+.dscc:disabled {
   cursor: not-allowed;
 }
 

@@ -12,6 +12,8 @@ function SortingVisualizer() {
   const [slider, setSlider] = useState(51);
   const [width, setWidth] = useState(4);
   const [order, setOrder] = useState("asc");
+  const [time, setTime] = useState(0);
+  const [name, setName] = useState("");
 
   useEffect(() => {
     console.log("disabling effect called");
@@ -41,7 +43,7 @@ function SortingVisualizer() {
       }
       setWidth(15);
     } else if (slider > 50 && slider <= 75) {
-      for (let i = 0; i < 110; i++) {
+      for (let i = 0; i < 90; i++) {
         array.push(randomNumbers(5, window.screen.height - 300));
       }
       setWidth(6);
@@ -50,7 +52,7 @@ function SortingVisualizer() {
         array.push(randomNumbers(5, window.screen.height - 300));
       }
       if (window.screen.width < 1090) {
-        setWidth(8);
+        setWidth(15);
       } else {
         setWidth(3);
       }
@@ -58,7 +60,8 @@ function SortingVisualizer() {
     changeColor();
     var auxArray = array.map((v) => v);
     setAuxArray(auxArray);
-
+    setName("");
+    setTime(0);
     return array;
   };
 
@@ -71,13 +74,14 @@ function SortingVisualizer() {
     }
   };
 
-  const stopAndReset = () => {
-    clearTimeout(timer);
-    setArray(resetArray());
-  };
+  // const stopAndReset = () => {
+  //   clearTimeout(timer);
+  //   setArray(resetArray());
+  // };
 
   const mergeSort = () => {
     setdisableButton(true);
+    let start = new Date();
     const animations = SortingAlgorithms.mergeSort(auxArray, order);
     // console.log(animations);
 
@@ -91,8 +95,8 @@ function SortingVisualizer() {
         if (myNum === 1) {
           myNum = 2;
           setTimeout(() => {
-            barOneStyle.backgroundColor = "red";
-            barTwoStyle.backgroundColor = "red";
+            barOneStyle.backgroundColor = "blue";
+            barTwoStyle.backgroundColor = "blue";
           }, i * TIMER);
         } else if (myNum === 2) {
           myNum = 3;
@@ -119,6 +123,10 @@ function SortingVisualizer() {
       }
       if (i === animations.length - 1) {
         timer = setTimeout(() => {
+          setName("Merge");
+          let end = new Date();
+          let t = (end.getTime() - start.getTime()) / 1000;
+          setTime(t);
           setdisableButton(false);
         }, i * TIMER + 100);
       }
@@ -126,6 +134,7 @@ function SortingVisualizer() {
   };
 
   const quickSort = () => {
+    let start = new Date();
     setdisableButton(true);
     const ani = SortingAlgorithms.QuickSortCall(auxArray, order);
     const animations = ani.animation;
@@ -182,6 +191,10 @@ function SortingVisualizer() {
       }
       if (i === animations.length - 1) {
         setTimeout(() => {
+          setName("Quick");
+          let end = new Date();
+          let t = (end.getTime() - start.getTime()) / 1000;
+          setTime(t);
           setdisableButton(false);
         }, i * TIMER + 1000);
       }
@@ -189,6 +202,7 @@ function SortingVisualizer() {
   };
 
   const bubbleSort = () => {
+    let start = new Date();
     setdisableButton(true);
     const animations = SortingAlgorithms.bubbleSortCall(auxArray, order);
     var myNum = 1;
@@ -232,6 +246,10 @@ function SortingVisualizer() {
       }
       if (i === animations.length - 1) {
         setTimeout(() => {
+          setName("Bubble");
+          let end = new Date();
+          let t = (end.getTime() - start.getTime()) / 1000;
+          setTime(t);
           setdisableButton(false);
         }, i * TIMER + 1000);
       }
@@ -239,6 +257,7 @@ function SortingVisualizer() {
   };
 
   const heapSort = () => {
+    let start = new Date();
     setdisableButton(true);
     const animations = SortingAlgorithms.heapSortCall(auxArray, order);
     var myNum = 1;
@@ -296,6 +315,10 @@ function SortingVisualizer() {
 
       if (i === animations.length - 1) {
         setTimeout(() => {
+          setName("Heap");
+          let end = new Date();
+          let t = (end.getTime() - start.getTime()) / 1000;
+          setTime(t);
           setdisableButton(false);
         }, i * TIMER + 1000);
       }
@@ -303,6 +326,7 @@ function SortingVisualizer() {
   };
 
   const insertionSort = () => {
+    let start = new Date();
     setdisableButton(true);
     const animations = SortingAlgorithms.insertionSortCall(auxArray, order);
     var isChange = true;
@@ -348,6 +372,10 @@ function SortingVisualizer() {
       }
       if (i === animations.length - 1) {
         setTimeout(() => {
+          setName("Insertion");
+          let end = new Date();
+          let t = (end.getTime() - start.getTime()) / 1000;
+          setTime(t);
           setdisableButton(false);
         }, i * TIMER + 1000);
       }
@@ -455,6 +483,15 @@ function SortingVisualizer() {
           ></div>
         ))}
       </div>
+      {name.length !== 0 ? (
+        <div className="time-taken">
+          <p className="delay">10ms delay on every single comparison</p>
+          <p className="time">
+            Time Taken by {name}Sort : {time}s
+          </p>
+        </div>
+      ) : null}
+
       <div className="down-bar">
         <div className="text">Project By Mehtab Alam Khan</div>
       </div>

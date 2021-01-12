@@ -133,7 +133,7 @@ function heap_root(array, animations, i, order) {
     }
   }
 
-  if (largest != i) {
+  if (largest !== i) {
     swap(array, i, largest);
     animations.push([i, largest, array[i], array[largest], 0]);
     heap_root(array, animations, largest,order);
@@ -264,8 +264,6 @@ function doMerge(
     // These are the values that we're comparing; we push them once
     // to change their color.
     animations.push([i, j,0]);
-    // These are the values that we're comparing; we push them a second
-    // time to revert their color.
     animations.push([i, j,0]);
     animations.push([i, j,0]);
     if(order==='asc'){
