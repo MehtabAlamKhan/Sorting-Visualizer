@@ -60,7 +60,7 @@ function SortingVisualizer() {
     changeColor();
     var auxArray = array.map((v) => v);
     setAuxArray(auxArray);
-    setName("df");
+    setName("");
     setTime(0);
     return array;
   };
