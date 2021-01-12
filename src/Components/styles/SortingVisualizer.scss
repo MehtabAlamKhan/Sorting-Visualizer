@@ -45,7 +45,7 @@ body {
   }
   .time-taken {
     position: absolute;
-    border: 1px solid rgb(202, 202, 202);
+    // border: 1px solid rgb(202, 202, 202);
     color: rgb(61, 61, 61);
     border-radius: 5px;
     padding: 8px;
@@ -54,7 +54,8 @@ body {
     flex-direction: column;
     font-family: monospace, "Courier New", Courier;
     font-weight: 550;
-    bottom: 90px;
+    bottom: 35px;
+    font-size: 0.7em;
   }
   .time {
     position: relative;
@@ -64,6 +65,14 @@ body {
   .delay {
     position: relative;
     margin: 0px 0px 0px 0px;
+  }
+  .text {
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
   }
 }
 
@@ -186,6 +195,15 @@ body {
     position: absolute;
     margin: 0;
     margin-top: 20px;
+  }
+
+  .text {
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 1.3em;
+    color: rgb(255, 255, 255);
   }
 }
 .slider:disabled {
@@ -382,15 +400,6 @@ body {
   bottom: 0;
   background-color: rgb(42, 42, 42);
   width: 100%;
-}
-.text {
-  background-color: transparent;
-  align-items: center;
-  justify-content: center;
-  font-family: monospace;
-  font-size: 1.3em;
-
-  color: rgb(255, 255, 255);
 }
 .text:hover {
   cursor: url("/src/red.png"), default;
