@@ -152,8 +152,8 @@ function SortingVisualizer() {
     setdisableButton(true);
     const ani = SortingAlgorithms.QuickSortCall(auxArray, order);
     const animations = ani.animation;
-    const animations2 = ani.animation2;
-    console.log(animations);
+    // const animations2 = ani.animation2;
+    // console.log(animations);
 
     const arrayBars = document.getElementsByClassName("array-bars");
     var isChange = true;
@@ -320,7 +320,7 @@ function SortingVisualizer() {
           // barTwoStyle.backgroundColor = "#ff9ee6";
           setTimeout(() => {
             barTwoStyle.backgroundColor = "#ff9ee6";
-          }, i * 0.001);
+          }, i * 0.09);
           if (i === animations.length - 1) {
             barOneStyle.backgroundColor = "#ff9ee6";
           }
