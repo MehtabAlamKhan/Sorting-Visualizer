@@ -136,7 +136,7 @@ function SortingVisualizer() {
                   barStyle.backgroundColor = "#46e446";
                 }, i * 2);
               }, i * 2);
-            }, i * 4);
+            }, i * 8);
           }
         }, i * TIMER);
         setTimeout(() => {
@@ -222,7 +222,7 @@ function SortingVisualizer() {
                   barStyle.backgroundColor = "#46e446";
                 }, i * 1);
               }, i * 1);
-            }, i * 3);
+            }, i * 6);
           }
         }, i * TIMER);
         setTimeout(() => {
@@ -291,7 +291,7 @@ function SortingVisualizer() {
                   barStyle.backgroundColor = "#46e446";
                 }, i * 2);
               }, i * 2);
-            }, i * 4);
+            }, i * 8);
           }
         }, i * TIMER);
         setTimeout(() => {
@@ -374,7 +374,7 @@ function SortingVisualizer() {
                   barStyle.backgroundColor = "#46e446";
                 }, i * 2);
               }, i * 2);
-            }, i * 4);
+            }, i * 8);
           }
         }, i * TIMER);
         setTimeout(() => {
@@ -445,7 +445,7 @@ function SortingVisualizer() {
                   barStyle.backgroundColor = "#46e446";
                 }, i * 2);
               }, i * 2);
-            }, i * 4);
+            }, i * 8);
           }
         }, i * TIMER);
         setTimeout(() => {
