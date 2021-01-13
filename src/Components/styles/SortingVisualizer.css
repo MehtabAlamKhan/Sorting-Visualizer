@@ -443,11 +443,12 @@ body {
   -webkit-box-align: inherit;
       -ms-flex-align: inherit;
           align-items: inherit;
+  margin: auto;
 }
 
 .array-bars {
   margin: 0px 1px;
-  background-color: turquoise;
+  background: turquoise;
 }
 
 .down-bar {

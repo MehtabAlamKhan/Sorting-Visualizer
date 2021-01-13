@@ -2,7 +2,7 @@ import "./styles/SortingVisualizer.css";
 import React, { useState, useEffect } from "react";
 import * as SortingAlgorithms from "./SortingAlogorithms.js";
 
-const TIMER = 10;
+const TIMER = 1;
 var timer;
 
 function SortingVisualizer() {
@@ -24,8 +24,8 @@ function SortingVisualizer() {
     console.log("Reset array Effect called");
     var array = resetArray();
     setArray(array);
-    var auxArray = array.map((v) => v);
-    setAuxArray(auxArray);
+    // var auxArray = array.map((v) => v);
+    // setAuxArray(auxArray);
   }, [slider]);
 
   const resetArray = () => {
@@ -122,13 +122,27 @@ function SortingVisualizer() {
         }, i * TIMER);
       }
       if (i === animations.length - 1) {
-        timer = setTimeout(() => {
-          setName("Merge");
+        setTimeout(() => {
           let end = new Date();
           let t = (end.getTime() - start.getTime()) / 1000;
           setTime(t);
+          for (let i = 0; i < array.length; i++) {
+            setTimeout(() => {
+              const barStyle = arrayBars[i].style;
+              barStyle.backgroundColor = "red";
+              setTimeout(() => {
+                barStyle.backgroundColor = "yellow";
+                setTimeout(() => {
+                  barStyle.backgroundColor = "#46e446";
+                }, i * 2);
+              }, i * 2);
+            }, i * 4);
+          }
+        }, i * TIMER);
+        setTimeout(() => {
+          setName("Merge");
           setdisableButton(false);
-        }, i * TIMER + 100);
+        }, i * TIMER + 1000);
       }
     }
   };
@@ -188,13 +202,31 @@ function SortingVisualizer() {
             barTwoStyle.backgroundColor = "turquoise";
           }, i * TIMER);
         }
+      } else if (animations[i].length === 1) {
+        const barIdx = animations[i];
+        const barStlye = arrayBars[barIdx].style;
+        barStlye.backgroundColor = "yellow";
       }
       if (i === animations.length - 1) {
         setTimeout(() => {
-          setName("Quick");
           let end = new Date();
           let t = (end.getTime() - start.getTime()) / 1000;
           setTime(t);
+          for (let i = 0; i < array.length; i++) {
+            setTimeout(() => {
+              const barStyle = arrayBars[i].style;
+              barStyle.backgroundColor = "red";
+              setTimeout(() => {
+                barStyle.backgroundColor = "yellow";
+                setTimeout(() => {
+                  barStyle.backgroundColor = "#46e446";
+                }, i * 1);
+              }, i * 1);
+            }, i * 3);
+          }
+        }, i * TIMER);
+        setTimeout(() => {
+          setName("Quick");
           setdisableButton(false);
         }, i * TIMER + 1000);
       }
@@ -246,10 +278,24 @@ function SortingVisualizer() {
       }
       if (i === animations.length - 1) {
         setTimeout(() => {
-          setName("Bubble");
           let end = new Date();
           let t = (end.getTime() - start.getTime()) / 1000;
           setTime(t);
+          for (let i = 0; i < array.length; i++) {
+            setTimeout(() => {
+              const barStyle = arrayBars[i].style;
+              barStyle.backgroundColor = "red";
+              setTimeout(() => {
+                barStyle.backgroundColor = "yellow";
+                setTimeout(() => {
+                  barStyle.backgroundColor = "#46e446";
+                }, i * 2);
+              }, i * 2);
+            }, i * 4);
+          }
+        }, i * TIMER);
+        setTimeout(() => {
+          setName("Bubble");
           setdisableButton(false);
         }, i * TIMER + 1000);
       }
@@ -271,14 +317,14 @@ function SortingVisualizer() {
         setTimeout(() => {
           barOneStyle.height = `${small}px`;
           barTwoStyle.height = `${large}px`;
-          barTwoStyle.backgroundColor = "red";
+          // barTwoStyle.backgroundColor = "#ff9ee6";
           setTimeout(() => {
             barTwoStyle.backgroundColor = "#ff9ee6";
-          }, i * 0.1);
+          }, i * 0.001);
           if (i === animations.length - 1) {
             barOneStyle.backgroundColor = "#ff9ee6";
           }
-          // barTwoStyle.backgroundColor = "red";
+          barTwoStyle.backgroundColor = "red";
         }, i * TIMER);
       } else if (animations[i].length === 2) {
         const [barOneIdx, barTwoIdx] = animations[i];
@@ -315,10 +361,24 @@ function SortingVisualizer() {
 
       if (i === animations.length - 1) {
         setTimeout(() => {
-          setName("Heap");
           let end = new Date();
           let t = (end.getTime() - start.getTime()) / 1000;
           setTime(t);
+          for (let i = 0; i < array.length; i++) {
+            setTimeout(() => {
+              const barStyle = arrayBars[i].style;
+              barStyle.backgroundColor = "red";
+              setTimeout(() => {
+                barStyle.backgroundColor = "yellow";
+                setTimeout(() => {
+                  barStyle.backgroundColor = "#46e446";
+                }, i * 2);
+              }, i * 2);
+            }, i * 4);
+          }
+        }, i * TIMER);
+        setTimeout(() => {
+          setName("Heap");
           setdisableButton(false);
         }, i * TIMER + 1000);
       }
@@ -372,10 +432,24 @@ function SortingVisualizer() {
       }
       if (i === animations.length - 1) {
         setTimeout(() => {
-          setName("Insertion");
           let end = new Date();
           let t = (end.getTime() - start.getTime()) / 1000;
           setTime(t);
+          for (let i = 0; i < array.length; i++) {
+            setTimeout(() => {
+              const barStyle = arrayBars[i].style;
+              barStyle.backgroundColor = "red";
+              setTimeout(() => {
+                barStyle.backgroundColor = "yellow";
+                setTimeout(() => {
+                  barStyle.backgroundColor = "#46e446";
+                }, i * 2);
+              }, i * 2);
+            }, i * 4);
+          }
+        }, i * TIMER);
+        setTimeout(() => {
+          setName("Insertion");
           setdisableButton(false);
         }, i * TIMER + 1000);
       }

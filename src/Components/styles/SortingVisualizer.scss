@@ -385,11 +385,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: inherit;
+  margin: auto;
 }
 
 .array-bars {
   margin: 0px 1px;
-  background-color: turquoise;
+  // background: #46e446;
+  background: turquoise;
+  
 }
 
 .down-bar {
